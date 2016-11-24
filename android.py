@@ -1,6 +1,8 @@
 import os
 import sys
 import setEnv
+
+sys.path.append('..')
 import config
 
 projectPath = '../app'
@@ -14,7 +16,7 @@ def StartDDMS():
 	Support()
 
 def CreateProject():
-	command = os.environ['ANDROID_TOOLS'] + 'android create project --target android-' + config.TARGET_API + ' --name ' + config.APP_NAME + ' --path ' + projectPath + ' --activity Splash --package ' + config.APP_PACKAGE + ' --gradle --gradle-version ' + gradleVersion
+	command = os.environ['ANDROID_TOOLS'] + 'android create project --target android-' + config.TARGET + ' --name ' + config.APP_NAME + ' --path ' + projectPath + ' --activity Splash --package ' + config.APP_PACKAGE + ' --gradle --gradle-version ' + gradleVersion
 	os.system(command)
 	raw_input('\nPress any key to continue')
 	Support()
